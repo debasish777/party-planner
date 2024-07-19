@@ -1,19 +1,20 @@
-import NavBar from '../components/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SignButtons from '../components/SignButtons';
+import { Route, Routes } from 'react-router-dom';
+import Header from '../components/Header';
 import './App.css'
-import Homepage from '../components/Homepage';
-import LoginForm from '../components/LoginForm';
+import LoginPage from '../components/LoginPage';
+import SignUpPage from '../components/SignUpPage';
+import PageLayout from '../components/PageLayout'
 
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path='/' exact component={Homepage} />
-        <Route path='/auth/signup' component={LoginForm} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path='/' element={<PageLayout />}>
+        <Route index element={<div>Homepage</div>} />
+        <Route path={'/login'} element={<LoginPage />} />
+        <Route path={'/signup'} element={<SignUpPage />} />
+      </Route>
+    </Routes>
   );
 }
 

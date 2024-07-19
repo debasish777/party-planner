@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import router from './routes/auth.routes.js';
 import connectToDB from './db/mongoConnect.js';
 
 const app=express();
 const port=process.env.PORT ||5000;
+app.use(cors());
 
 dotenv.config();
 

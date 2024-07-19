@@ -35,10 +35,10 @@ export const signup = async (req, res) => {
 
             await newUser
                 .save()
-                .then((result)=>{
-                    //HANDLE VERIFICATION
-                    sendOTPVerificationEmail(result,res);
-                });
+                // .then((result)=>{
+                //     //HANDLE VERIFICATION
+                //     sendOTPVerificationEmail(result,res);
+                // });
             
 
             res.status(201).json({
