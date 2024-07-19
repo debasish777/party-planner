@@ -7,6 +7,6 @@ const UserOTPVerificationSchema = new mongoose.Schema({
     expiredAt: Date
 });
 
-const UserOTPVerification = new mongoose.model("UserOTPVerification", UserOTPVerificationSchema);
+const UserOTPVerification = mongoose.model("UserOTPVerification", UserOTPVerificationSchema);
 
 export default UserOTPVerification;
